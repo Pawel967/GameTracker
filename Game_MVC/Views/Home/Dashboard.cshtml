@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container">
+    <div class="card shadow-custom mb-4">
+        <div class="card-body">
+            <h1 class="card-title">Welcome to Game Tracker</h1>
+            <p class="card-text">
+                Track your games, discover new titles, and connect with other gamers.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-book-reader fa-2x text-primary me-3"></i>
+                        <h5 class="card-title mb-0">My Library</h5>
+                    </div>
+                    <p class="card-text">Manage your game collection, track progress, and rate your favorite games.</p>
+                    <a asp-controller="Library" asp-action="Index" class="btn btn-primary">
+                        <i class="fas fa-arrow-right me-2"></i>Go to Library
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-gamepad fa-2x text-primary me-3"></i>
+                        <h5 class="card-title mb-0">Browse Games</h5>
+                    </div>
+                    <p class="card-text">Explore our game catalog, search by genre, and add new games to your collection.</p>
+                    <a asp-controller="Games" asp-action="Index" class="btn btn-primary">
+                        <i class="fas fa-arrow-right me-2"></i>Browse Games
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-lightbulb fa-2x text-primary me-3"></i>
+                        <h5 class="card-title mb-0">Recommendations</h5>
+                    </div>
+                    <p class="card-text">Get personalized game recommendations based on your preferences and library.</p>
+                    <a asp-controller="Recommendations" asp-action="Index" class="btn btn-primary">
+                        <i class="fas fa-arrow-right me-2"></i>View Recommendations
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-user fa-2x text-primary me-3"></i>
+                        <h5 class="card-title mb-0">My Profile</h5>
+                    </div>
+                    <p class="card-text">View your profile, manage privacy settings, and see your gaming statistics.</p>
+                    <a asp-controller="Profile" asp-action="MyProfile" class="btn btn-primary">
+                        <i class="fas fa-arrow-right me-2"></i>View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-users fa-2x text-primary me-3"></i>
+                        <h5 class="card-title mb-0">Find Users</h5>
+                    </div>
+                    <p class="card-text">Search for other users, view their libraries, and connect with fellow gamers.</p>
+                    <a asp-controller="Profile" asp-action="Search" class="btn btn-primary">
+                        <i class="fas fa-arrow-right me-2"></i>Search Users
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-bell fa-2x text-primary me-3"></i>
+                        <h5 class="card-title mb-0">Notifications</h5>
+                    </div>
+                    <p class="card-text">Check your notifications for updates, follows, and system messages.</p>
+                    <a asp-controller="Notifications" asp-action="Index" class="btn btn-primary">
+                        <i class="fas fa-arrow-right me-2"></i>View Notifications
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Game_MVC.Models.Recommendations.GameRecommendationViewModel>
+
+@if (!Model.Any())
+{
+    <div class="card shadow-custom">
+        <div class="card-body text-center py-5">
+            <i class="fas fa-exclamation-circle fa-3x text-muted mb-3"></i>
+            <p class="text-muted">No recommendations found. Try adding more games to your library!</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="card shadow-custom">
+        <div class="card-body">
+            <div class="row g-4">
+                @foreach (var recommendation in Model)
+                {
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <img src="@recommendation.Game.CoverUrl"
+                                 class="card-img-top"
+                                 alt="@recommendation.Game.Name">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">@recommendation.Game.Name</h5>
+                                    <span class="badge bg-primary">
+                                        <i class="fas fa-star me-1"></i>
+                                        @((recommendation.Game.Rating / 10).ToString("F1"))
+                                    </span>
+                                </div>
+
+                                <p class="text-muted small mb-3">
+                                    @string.Join(" • ", recommendation.Game.Genres)
+                                </p>
+
+                                <p class="card-text text-truncate-3 mb-3">@recommendation.Game.Summary</p>
+
+                                <div class="alert alert-primary py-2 mb-3">
+                                    <i class="fas fa-lightbulb me-2"></i>@recommendation.RecommendationReason
+                                </div>
+
+                                <a asp-controller="Games"
+                                   asp-action="Details"
+                                   asp-route-id="@recommendation.Game.Id"
+                                   class="btn btn-primary w-100">
+                                    <i class="fas fa-info-circle me-2"></i>View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

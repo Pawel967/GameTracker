@@ -1,0 +1,91 @@
+﻿@using Game_MVC.Models.Recommendations
+@model RecommendationIndexViewModel
+@{
+    ViewData["Title"] = "Game Recommendations";
+}
+
+<div class="container py-4">
+    <h1 class="mb-4">Game Recommendations</h1>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        <!-- Library Statistics -->
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow-custom">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Your Library Stats</h5>
+                    <h6 class="mb-3">Genres in Your Library:</h6>
+                    @foreach (var genre in Model.GenreStats.OrderByDescending(g => g.GamesCount))
+                    {
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>@genre.GenreName</span>
+                            <span class="badge bg-secondary">@genre.GamesCount</span>
+                        </div>
+                    }
+
+                    @if (Model.TotalGames < 3)
+                    {
+                        <div class="alert alert-info mt-4">
+                            <i class="fas fa-info-circle me-2"></i>For better results, add at least 3 games to your library
+                        </div>
+                    }
+
+                    <button id="generateRecommendations" class="btn btn-primary w-100 mt-4">
+                        <i class="fas fa-magic me-2"></i>Generate Recommendations
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations Section -->
+        <div class="col-lg-8">
+            <div id="recommendationsContainer">
+                <div class="card shadow-custom">
+                    <div class="card-body text-center py-5">
+                        <i class="fas fa-lightbulb fa-3x text-muted mb-3"></i>
+                        <p class="text-muted">Click the generate button to get your personalized recommendations!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('generateRecommendations')?.addEventListener('click', async function () {
+            try {
+                this.disabled = true;
+                this.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Generating...';
+
+                const response = await fetch('/Recommendations/GenerateRecommendations', {
+                    method: 'POST',
+                    headers: {
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    }
+                });
+
+                if (!response.ok) throw new Error('Failed to generate recommendations');
+
+                const html = await response.text();
+                document.getElementById('recommendationsContainer').innerHTML = html;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('recommendationsContainer').innerHTML = `
+                            <div class="alert alert-danger">
+                                Failed to generate recommendations. Please try again.
+                            </div>`;
+            } finally {
+                this.disabled = false;
+                this.innerHTML = '<i class="fas fa-magic me-2"></i>Generate Recommendations';
+            }
+        });
+    </script>
+}

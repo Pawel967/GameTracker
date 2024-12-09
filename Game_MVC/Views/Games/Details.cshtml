@@ -1,0 +1,134 @@
+﻿@model Game_MVC.Models.Game.GameViewModel
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="container py-4">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="card shadow-custom mb-4">
+        <div class="row g-0">
+            <div class="col-md-4" style="max-height: 500px;">
+                @if (!string.IsNullOrEmpty(Model.CoverUrl))
+                {
+                    <img src="@Model.CoverUrl" class="img-fluid object-fit-cover w-100 h-100" alt="@Model.Name">
+                }
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h1 class="card-title mb-1">@Model.Name</h1>
+                        <span class="badge bg-primary fs-5">
+                            <i class="fas fa-star me-1"></i>
+                            @((Model.Rating / 10).ToString("F1"))
+                        </span>
+                    </div>
+
+                    <p class="text-muted mb-3">
+                        @string.Join(" • ", Model.Genres)
+                    </p>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Developer:</strong> @Model.Developer</p>
+                            <p class="mb-1"><strong>Publisher:</strong> @Model.Publisher</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Release Date:</strong> @Model.ReleaseDate?.ToString("MMMM dd, yyyy")</p>
+                            <p class="mb-1"><strong>Rating Count:</strong> @Model.RatingCount.ToString("N0")</p>
+                        </div>
+                    </div>
+
+                    <h5>About</h5>
+                    <p class="card-text position-relative" id="gameSummary">
+                        <span class="@(Model.Summary?.Length > 300 ? "text-truncate-3" : "")">@Model.Summary</span>
+                        @if (Model.Summary?.Length > 300)
+                        {
+                            <button onclick="toggleSummary()" id="summaryToggle" class="btn btn-link p-0 text-primary">Show more</button>
+                        }
+                    </p>
+
+                    <div class="mt-4">
+                        @if (Model.IsInUserLibrary)
+                        {
+                            <a asp-controller="Library" asp-action="Index" class="btn btn-primary">
+                                <i class="fas fa-bookmark me-2"></i>View in Library
+                            </a>
+                        }
+                        else
+                        {
+                            <form asp-action="AddToLibrary" method="post" class="d-inline">
+                                <input type="hidden" name="id" value="@Model.Id" />
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-plus me-2"></i>Add to Library
+                                </button>
+                            </form>
+                        }
+                        <a asp-action="Index" class="btn btn-outline-secondary ms-2">
+                            <i class="fas fa-arrow-left me-2"></i>Back to List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (Model.SimilarGames.Any())
+    {
+        <div class="card shadow-custom">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Similar Games</h4>
+                <div class="row g-4">
+                    @foreach (var similar in Model.SimilarGames)
+                    {
+                        <div class="col-6 col-md-3 col-lg-2">
+                            <a asp-action="Details" asp-route-id="@similar.Id" class="text-decoration-none">
+                                <div class="card h-100">
+                                    @if (!string.IsNullOrEmpty(similar.CoverUrl))
+                                    {
+                                        <img src="@similar.CoverUrl" class="card-img-top"
+                                             style="height: 200px; object-fit: cover;"
+                                             alt="@similar.Name">
+                                    }
+                                    <div class="card-body p-2">
+                                        <h6 class="card-title mb-0 text-center small">@similar.Name</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function toggleSummary() {
+            const summary = document.querySelector('#gameSummary .text-truncate-3');
+            const button = document.getElementById('summaryToggle');
+
+            if (summary.classList.contains('expanded')) {
+                summary.classList.remove('expanded');
+                button.textContent = 'Show more';
+            } else {
+                summary.classList.add('expanded');
+                button.textContent = 'Show less';
+            }
+        }
+    </script>
+}

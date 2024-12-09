@@ -1,0 +1,229 @@
+﻿@using Game_MVC.Models.Profile
+@using Game_MVC.Models.Library
+@using System.Security.Claims
+@model UserProfileViewModel
+@{
+    ViewData["Title"] = $"{Model.Username}'s Profile";
+    var isCurrentUserProfile = User.FindFirst(ClaimTypes.NameIdentifier)?.Value == Model.Id.ToString();
+}
+
+<div class="container py-4">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="card shadow-custom mb-4">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="mb-0">@Model.Username</h1>
+                    @if (Model.IsProfilePrivate)
+                    {
+                        <span class="badge bg-secondary">
+                            <i class="fas fa-lock me-1"></i>Private Profile
+                        </span>
+                    }
+                </div>
+
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    @if (isCurrentUserProfile)
+                    {
+                        <form asp-action="TogglePrivacy" method="post" class="d-inline">
+                            @if (Model.IsProfilePrivate)
+                            {
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-lock-open me-2"></i>Make Public
+                                </button>
+                            }
+                            else
+                            {
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-lock me-2"></i>Make Private
+                                </button>
+                            }
+                        </form>
+                    }
+                    else if (!Model.IsProfilePrivate)
+                    {
+                        @if (Model.IsFollowedByCurrentUser)
+                        {
+                            <form asp-action="Unfollow" asp-route-userId="@Model.Id" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-outline-primary">
+                                    <i class="fas fa-user-minus me-2"></i>Unfollow
+                                </button>
+                            </form>
+                        }
+                        else
+                        {
+                            <form asp-action="Follow" asp-route-userId="@Model.Id" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-user-plus me-2"></i>Follow
+                                </button>
+                            </form>
+                        }
+                    }
+                }
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Social</h6>
+                            <div class="d-flex justify-content-around text-center">
+                                <a asp-action="Followers" asp-route-userId="@Model.Id" class="text-decoration-none">
+                                    <div>
+                                        <div class="h4 mb-0">@Model.FollowersCount</div>
+                                        <small class="text-muted">Followers</small>
+                                    </div>
+                                </a>
+                                <a asp-action="Following" asp-route-userId="@Model.Id" class="text-decoration-none">
+                                    <div>
+                                        <div class="h4 mb-0">@Model.FollowingCount</div>
+                                        <small class="text-muted">Following</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Library Stats</h6>
+                            <div class="row text-center">
+                                @foreach (var status in Model.GameStatusCounts)
+                                {
+                                    <div class="col">
+                                        <div class="h4 mb-0">@status.Value</div>
+                                        <small class="text-muted">@status.Key</small>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @if (!Model.IsProfilePrivate || isCurrentUserProfile)
+            {
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="mb-0">Games Library</h5>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input type="text"
+                                   id="gameSearch"
+                                   class="form-control"
+                                   placeholder="Search games..."
+                                   aria-label="Search games">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="gamesContainer">
+                    @foreach (var game in Model.Games)
+                    {
+                        <div class="col game-card" data-game-name="@game.Name.ToLower()" data-game-genres="@string.Join(" ", game.Genres.Select(g => g.ToLower()))">
+                            <div class="card h-100">
+                                <div style="padding-top: 133%; position: relative;">
+                                    <img src="@game.CoverUrl"
+                                         class="card-img-top position-absolute top-0 start-0 w-100 h-100"
+                                         style="object-fit: contain;"
+                                         alt="@game.Name">
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h5 class="card-title mb-0">@game.Name</h5>
+                                        <span class="badge bg-primary">
+                                            <i class="fas fa-star me-1"></i>
+                                            @((game.Rating / 10).ToString("F1"))
+                                        </span>
+                                    </div>
+                                    <p class="text-muted small mb-2">
+                                        @string.Join(" • ", game.Genres)
+                                    </p>
+                                    <div class="badge bg-secondary">@game.Status</div>
+                                    @if (game.UserRating.HasValue)
+                                    {
+                                        <div class="mt-2">
+                                            <small class="text-muted">User Rating:</small>
+                                            <span class="ms-1">@game.UserRating/10</span>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="fas fa-lock fa-3x text-muted mb-3"></i>
+                    <p class="text-muted">This profile is private</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('gameSearch');
+            const gameCards = document.querySelectorAll('.game-card');
+            const gamesContainer = document.getElementById('gamesContainer');
+            let noResultsMsg = null;
+
+            searchInput.addEventListener('input', function (e) {
+                const searchTerm = e.target.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                gameCards.forEach(card => {
+                    const gameName = card.dataset.gameName;
+                    const gameGenres = card.dataset.gameGenres;
+
+                    if (gameName.includes(searchTerm) || gameGenres.includes(searchTerm)) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (noResultsMsg) {
+                    noResultsMsg.remove();
+                    noResultsMsg = null;
+                }
+
+                if (visibleCount === 0 && searchTerm !== '') {
+                    noResultsMsg = document.createElement('div');
+                    noResultsMsg.className = 'position-absolute top-50 start-50 translate-middle w-100 text-center';
+                    noResultsMsg.style.marginTop = '100px';
+                    noResultsMsg.innerHTML = `
+                                <i class="fas fa-search fa-3x text-muted mb-3 d-block"></i>
+                                <p class="text-muted">No games found matching "${searchTerm}"</p>
+                            `;
+                    gamesContainer.style.position = 'relative';
+                    gamesContainer.style.minHeight = '400px';
+                    gamesContainer.appendChild(noResultsMsg);
+                }
+            });
+        });
+    </script>
+}

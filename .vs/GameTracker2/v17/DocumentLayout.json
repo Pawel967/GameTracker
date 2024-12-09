@@ -1,0 +1,345 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_mvc\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|solutionrelative:game_mvc\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|solutionrelative:game_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_mvc\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|solutionrelative:game_mvc\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_mvc\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|solutionrelative:game_mvc\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|solutionrelative:game_mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_mvc\\views\\recommendations\\_recommendationslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|solutionrelative:game_mvc\\views\\recommendations\\_recommendationslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_mvc\\notificationcounterviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|solutionrelative:game_mvc\\notificationcounterviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_mvc\\authenticatedhttpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|solutionrelative:game_mvc\\authenticatedhttpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|solutionrelative:game_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_api\\services\\gamerecommendationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|solutionrelative:game_api\\services\\gamerecommendationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_mvc\\views\\recommendations\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|solutionrelative:game_mvc\\views\\recommendations\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_api\\services\\userprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|solutionrelative:game_api\\services\\userprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_api\\services\\userlibraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|solutionrelative:game_api\\services\\userlibraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_api\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|solutionrelative:game_api\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_api\\services\\iuserprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|solutionrelative:game_api\\services\\iuserprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_api\\services\\iuserlibraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|solutionrelative:game_api\\services\\iuserlibraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_api\\services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|solutionrelative:game_api\\services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_api\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|solutionrelative:game_api\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AE2201-3506-487E-8D38-E89B8D25F485}|Game_API\\Game_API.csproj|solutionrelative:game_api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|c:\\users\\pawe\u0142\\desktop\\gametracker2\\game_mvc\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE5AAFB-5004-4B4F-8B82-2DC8B2E910BD}|Game_MVC\\Game_MVC.csproj|solutionrelative:game_mvc\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Game_MVC\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Game_MVC\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAwC8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T16:35:36.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Program.cs",
+              "RelativeDocumentMoniker": "Game_MVC\\Program.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Program.cs",
+              "RelativeToolTip": "Game_MVC\\Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T16:35:19.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Game_MVC\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Game_MVC\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-09T16:32:30.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Game_MVC\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Game_MVC\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAD0CAAAAAAAAAAAAAI8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-09T16:28:40.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Game_MVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Game_MVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-09T16:27:09.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_RecommendationsList.cshtml",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Views\\Recommendations\\_RecommendationsList.cshtml",
+              "RelativeDocumentMoniker": "Game_MVC\\Views\\Recommendations\\_RecommendationsList.cshtml",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Views\\Recommendations\\_RecommendationsList.cshtml",
+              "RelativeToolTip": "Game_MVC\\Views\\Recommendations\\_RecommendationsList.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-09T16:25:50.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NotificationCounterViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\NotificationCounterViewComponent.cs",
+              "RelativeDocumentMoniker": "Game_MVC\\NotificationCounterViewComponent.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\NotificationCounterViewComponent.cs",
+              "RelativeToolTip": "Game_MVC\\NotificationCounterViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T16:25:48.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthenticatedHttpClient.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\AuthenticatedHttpClient.cs",
+              "RelativeDocumentMoniker": "Game_MVC\\AuthenticatedHttpClient.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\AuthenticatedHttpClient.cs",
+              "RelativeToolTip": "Game_MVC\\AuthenticatedHttpClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T16:25:46.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Game_API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Game_API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T20:37:40.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Views\\Recommendations\\Index.cshtml",
+              "RelativeDocumentMoniker": "Game_MVC\\Views\\Recommendations\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Views\\Recommendations\\Index.cshtml",
+              "RelativeToolTip": "Game_MVC\\Views\\Recommendations\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T20:33:43.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserProfileService.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\UserProfileService.cs",
+              "RelativeDocumentMoniker": "Game_API\\Services\\UserProfileService.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\UserProfileService.cs",
+              "RelativeToolTip": "Game_API\\Services\\UserProfileService.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:43:01.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserLibraryService.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\UserLibraryService.cs",
+              "RelativeDocumentMoniker": "Game_API\\Services\\UserLibraryService.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\UserLibraryService.cs",
+              "RelativeToolTip": "Game_API\\Services\\UserLibraryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:43:00.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "Game_API\\Services\\NotificationService.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\NotificationService.cs",
+              "RelativeToolTip": "Game_API\\Services\\NotificationService.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:42:56.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IUserProfileService.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\IUserProfileService.cs",
+              "RelativeDocumentMoniker": "Game_API\\Services\\IUserProfileService.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\IUserProfileService.cs",
+              "RelativeToolTip": "Game_API\\Services\\IUserProfileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:42:55.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\INotificationService.cs",
+              "RelativeDocumentMoniker": "Game_API\\Services\\INotificationService.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\INotificationService.cs",
+              "RelativeToolTip": "Game_API\\Services\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:42:51.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IUserLibraryService.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\IUserLibraryService.cs",
+              "RelativeDocumentMoniker": "Game_API\\Services\\IUserLibraryService.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\IUserLibraryService.cs",
+              "RelativeToolTip": "Game_API\\Services\\IUserLibraryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:42:51.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GameRecommendationService.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\GameRecommendationService.cs",
+              "RelativeDocumentMoniker": "Game_API\\Services\\GameRecommendationService.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\GameRecommendationService.cs",
+              "RelativeToolTip": "Game_API\\Services\\GameRecommendationService.cs",
+              "ViewState": "AgIAAA8BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:42:30.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Game_API\\Services\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\IAuthService.cs",
+              "RelativeToolTip": "Game_API\\Services\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:42:30.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Game_API\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_API\\Services\\AuthService.cs",
+              "RelativeToolTip": "Game_API\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:41:57.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProfileService.cs",
+              "DocumentMoniker": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Services\\ProfileService.cs",
+              "RelativeDocumentMoniker": "Game_MVC\\Services\\ProfileService.cs",
+              "ToolTip": "C:\\Users\\Pawe\u0142\\Desktop\\GameTracker2\\Game_MVC\\Services\\ProfileService.cs",
+              "RelativeToolTip": "Game_MVC\\Services\\ProfileService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:01:10.905Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

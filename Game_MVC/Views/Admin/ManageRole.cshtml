@@ -1,0 +1,59 @@
+﻿@model Game_MVC.Models.Admin.AssignRoleViewModel
+@{
+    ViewData["Title"] = "Manage Role";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-custom">
+                <div class="card-body p-4">
+                    <h2 class="text-primary mb-4">
+                        <i class="fas fa-user-tag me-2"></i>Manage User Role
+                    </h2>
+
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <i class="fas fa-exclamation-circle me-2"></i>@TempData["Error"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <form asp-action="ManageRole" method="post">
+                        @Html.AntiForgeryToken()
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                        <input type="hidden" asp-for="UserId" />
+
+                        <div class="mb-4">
+                            <label asp-for="RoleName" class="form-label">Select Role</label>
+                            <select asp-for="RoleName" class="form-select">
+                                <option value="">Choose a role...</option>
+                                @foreach (var role in Model.AvailableRoles)
+                                {
+                                    <option value="@role" selected="@(Model.RoleName == role)">@role</option>
+                                }
+                            </select>
+                            <span asp-validation-for="RoleName" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Save Role
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Back to List
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

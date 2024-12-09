@@ -1,0 +1,36 @@
+﻿@using Game_MVC.Models.Profile
+@model IEnumerable<FollowedUserViewModel>
+@{
+    ViewData["Title"] = "Followers";
+}
+
+<div class="container py-4">
+    <h1 class="mb-4">Followers</h1>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var follower in Model)
+        {
+            <div class="col">
+                <div class="card shadow-custom h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">
+                                <a asp-action="Index" asp-route-userId="@follower.Id" class="text-decoration-none">
+                                    @follower.Username
+                                </a>
+                            </h5>
+                            <span class="badge bg-primary">@follower.GamesCount games</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5">
+            <p class="text-muted">No followers yet</p>
+        </div>
+    }
+</div>

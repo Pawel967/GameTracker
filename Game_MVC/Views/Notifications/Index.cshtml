@@ -1,0 +1,109 @@
+﻿@using Game_MVC.Models.Notification
+@model IEnumerable<NotificationViewModel>
+@{
+    ViewData["Title"] = "Notifications";
+}
+
+<div class="container py-4">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Notifications</h1>
+        <div class="d-flex gap-2">
+            @if (User.IsInRole("Admin"))
+            {
+                <a asp-action="Send" class="btn btn-primary">
+                    <i class="fas fa-paper-plane me-2"></i>Send Notification
+                </a>
+            }
+            <form asp-action="MarkAllAsRead" method="post" class="d-inline">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-check-double me-2"></i>Mark All as Read
+                </button>
+            </form>
+            <div class="btn-group">
+                <a asp-action="Index" asp-route-includeRead="false"
+                   class="btn btn-outline-secondary @(!ViewBag.IncludeRead ? "active" : "")">
+                    Unread
+                </a>
+                <a asp-action="Index" asp-route-includeRead="true"
+                   class="btn btn-outline-secondary @(ViewBag.IncludeRead ? "active" : "")">
+                    All
+                </a>
+            </div>
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="card shadow-custom">
+            <div class="card-body text-center py-5">
+                <i class="fas fa-bell fa-3x text-muted mb-3"></i>
+                <p class="text-muted">No notifications to display</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card shadow-custom">
+            <div class="list-group list-group-flush">
+                @foreach (var notification in Model)
+                {
+                    <div class="list-group-item @(!notification.IsRead ? "bg-primary-subtle" : "")">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    @if (notification.TriggerUser != null)
+                                    {
+                                        <a asp-controller="Profile"
+                                           asp-action="Index"
+                                           asp-route-userId="@notification.TriggerUser.Id"
+                                           class="fw-bold text-decoration-none">
+                                            @notification.TriggerUser.Username
+                                        </a>
+                                    }
+                                    <span class="@(notification.TriggerUser != null ? "" : "fw-bold")">
+                                        @notification.Message
+                                    </span>
+                                </div>
+                                <small class="text-muted">
+                                    @notification.CreatedAt.ToString("g")
+                                </small>
+                            </div>
+                            <div class="d-flex gap-2">
+                                @if (!notification.IsRead)
+                                {
+                                    <form asp-action="MarkAsRead" method="post" class="d-inline">
+                                        <input type="hidden" name="id" value="@notification.Id" />
+                                        <button type="submit" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </form>
+                                }
+                                <form asp-action="Delete" method="post" class="d-inline">
+                                    <input type="hidden" name="id" value="@notification.Id" />
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>

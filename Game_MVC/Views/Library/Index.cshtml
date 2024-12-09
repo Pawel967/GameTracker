@@ -1,0 +1,177 @@
+﻿@model PaginatedResponse<UserGameLibraryViewModel>
+@using Game_MVC.Models.Library
+@{
+    ViewData["Title"] = "My Game Library";
+    var currentFilter = ViewBag.CurrentFilter as LibraryFilterViewModel ?? new LibraryFilterViewModel();
+}
+
+<div class="container py-4">
+    <h1 class="mb-4">My Game Library</h1>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="card shadow-custom mb-4">
+        <div class="card-body">
+            <form asp-action="Index" method="get" class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">Status</label>
+                    <select name="Status" class="form-select">
+                        <option value="">All</option>
+                        @foreach (var status in Enum.GetValues<GameStatus>())
+                        {
+                            <option value="@status" selected="@(currentFilter.Status == status)">@status</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Sort By</label>
+                    <select name="SortBy" class="form-select">
+                        <option value="dateadded" selected="@(currentFilter.SortBy == "dateadded")">Date Added</option>
+                        <option value="name" selected="@(currentFilter.SortBy == "name")">Name</option>
+                        <option value="globalrating" selected="@(currentFilter.SortBy == "globalrating")">Global Rating</option>
+                        <option value="userrating" selected="@(currentFilter.SortBy == "userrating")">Your Rating</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Order</label>
+                    <select name="Ascending" class="form-select">
+                        <option value="true" selected="@currentFilter.Ascending">Ascending</option>
+                        <option value="false" selected="@(!currentFilter.Ascending)">Descending</option>
+                    </select>
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-filter me-2"></i>Apply Filters
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+        @foreach (var game in Model.Items)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-custom">
+                    <div style="padding-top: 133%; position: relative;">
+                        <img src="@game.CoverUrl"
+                             class="card-img-top position-absolute top-0 start-0 w-100 h-100"
+                             style="object-fit: contain;"
+                             alt="@game.Name">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="card-title mb-0">@game.Name</h5>
+                            <form asp-action="ToggleFavorite" method="post" class="d-inline">
+                                <input type="hidden" name="gameId" value="@game.GameId" />
+                                <button type="submit" class="btn btn-link p-0 favorite-btn" title="@(game.IsFavorite ? "Remove from favorites" : "Add to favorites")">
+                                    @if (game.IsFavorite)
+                                    {
+                                        <i class="fas fa-heart fa-lg favorite-icon active"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="far fa-heart fa-lg favorite-icon"></i>
+                                    }
+                                </button>
+                            </form>
+                        </div>
+
+                        <p class="card-text text-truncate-3 mb-3">@game.Summary</p>
+
+                        <div class="mb-3">
+                            <div class="text-muted small mb-1">Global Rating: @game.Rating.ToString("F1")</div>
+                            @if (game.UserRating.HasValue)
+                            {
+                                <div class="text-muted small">Your Rating: @game.UserRating/10</div>
+                            }
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="d-flex flex-wrap gap-2">
+                                @foreach (var genre in game.Genres)
+                                {
+                                    <span class="badge bg-primary-subtle text-primary">@genre</span>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="mt-auto">
+                            <form asp-action="UpdateStatus" method="post" class="mb-3">
+                                <input type="hidden" name="gameId" value="@game.GameId" />
+                                <select name="status" class="form-select mb-2" onchange="this.form.submit()">
+                                    @foreach (var status in Enum.GetValues<GameStatus>())
+                                    {
+                                        <option value="@status" selected="@(game.Status == status)">@status</option>
+                                    }
+                                </select>
+                            </form>
+
+                            <form asp-action="UpdateRating" method="post" class="mb-3">
+                                <input type="hidden" name="gameId" value="@game.GameId" />
+                                <select name="rating" class="form-select" onchange="this.form.submit()">
+                                    <option value="">Rate Game</option>
+                                    @for (int i = 1; i <= 10; i++)
+                                    {
+                                        <option value="@i" selected="@(game.UserRating == i)">@i</option>
+                                    }
+                                </select>
+                            </form>
+
+                            <form asp-action="RemoveGame" method="post"
+                                  onsubmit="return confirm('Are you sure you want to remove this game from your library?');">
+                                <input type="hidden" name="gameId" value="@game.GameId" />
+                                <button type="submit" class="btn btn-outline-danger btn-sm w-100">
+                                    <i class="fas fa-trash-alt me-2"></i>Remove from Library
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    @if (!Model.Items.Any())
+    {
+        <div class="card shadow-custom">
+            <div class="card-body text-center py-5">
+                <i class="fas fa-books fa-3x text-muted mb-3"></i>
+                <p class="text-muted">Your library is empty. Start adding games to track your collection!</p>
+            </div>
+        </div>
+    }
+
+    @if (Model.TotalPages > 1)
+    {
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                        <a class="page-link" asp-action="Index"
+                           asp-route-pageNumber="@i"
+                           asp-route-status="@currentFilter.Status"
+                           asp-route-sortBy="@currentFilter.SortBy"
+                           asp-route-ascending="@currentFilter.Ascending">
+                            @i
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>
